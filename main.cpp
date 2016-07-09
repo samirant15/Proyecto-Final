@@ -11,6 +11,68 @@ typedef struct
     char tipo[50];
 }vehiculo;
 
+typedef enum
+{
+   Carro,
+   Camioneta,
+   Minibus,
+   Camion,
+   Emergencia
+}TipoVeh;
+
+typedef enum
+{
+    Izquierda,
+    Derecha,
+    NoGirar
+}Girar;
+
+typedef enum
+{
+    calleVertical,
+    calleHorizontal,
+    curvaH_LL,
+    curvaH_LR,
+    curvaH_RL,
+    curvaH_RR,
+    curvaV_UL,
+    curvaV_UR,
+    curvaV_DL,
+    curvaV_DR
+}TipoCalle;
+
+typedef struct
+{
+    int PosX;
+    int PosY;
+    TipoVeh Veh;
+    int velocidad;
+    int Hab_Chofer;
+}Carro;
+
+typedef struct
+{
+    int PosX;
+    int PosY;
+    int TiempoRojo;
+    int TiempoAmarillo;
+    int TiempoVerde;
+}Semaforo;
+
+typedef struct
+{
+    int PosX;
+    int PosY;
+    char TipoCalle[10];
+}CalleTile;
+
+typedef struct
+{
+    int PosX;
+    int PosY;
+}HierbaTile;
+
+
 
 int leerVehiculos(vehiculo **car);
 int agregarVehiculos(vehiculo **car, int tamAnterior);
